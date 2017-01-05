@@ -54,7 +54,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  width: 960px;
+  width: 800px;
   height: 500px;
   margin-bottom: 60px;
 }
@@ -74,6 +74,7 @@ body {
   top: 0;
   left: 0;
   height: 500px;
+  margin: auto auto;
 }
 
 .carousel-control.left, .carousel-control.right {
