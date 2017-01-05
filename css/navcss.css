@@ -54,6 +54,7 @@ body {
 
 /* Carousel base class */
 .carousel {
+  width: 960px;
   height: 500px;
   margin-bottom: 60px;
 }
