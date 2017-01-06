@@ -58,6 +58,20 @@ body {
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+/* Carousel base class */
+.carousel {
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
