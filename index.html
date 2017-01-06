@@ -12,14 +12,14 @@ carousel:
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-       {% for item in page.my_array %}
+       {% for item in page.carousels %}
         <li data-target="#myCarousel" data-slide-to="{{ forloop.index }}" {% if forloop.index==1 %} class="active" {% else %} class="" {% endif %}></li>
       {% endfor %} 
       </ol>
       <div class="carousel-inner" role="listbox">
-        {% for carousel in page.carousels %}
+        {% for item in page.carousel %}
         <div class="item">
-          <img class="img-responsive center-block" style="margin: 0 auto;" src="{{ carousel.img }}" alt="{{ carousel.alt }}">
+          <img class="img-responsive center-block" style="margin: 0 auto;" src="{{ item.img }}" alt="{{ item.alt }}">
         </div>
         {% endfor %}
       </div>
