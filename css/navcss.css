@@ -60,7 +60,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  max-height: 500px;
+  min-height: 500px;
   max-width: 800px;
   margin: auto;
   margin-bottom: 60px;
@@ -72,7 +72,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  max-height: 500px;
+  min-height: 500px;
   background-color: #777;
 }
 
@@ -80,7 +80,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  max-height: 500px;
+  min-height: 500px;
   margin: auto auto;
 }
 
