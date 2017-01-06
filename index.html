@@ -1,24 +1,27 @@
 ---
 layout: default
 title: Metapoch
+carousel:
+  - img: http://imgur.com/9HXnahO
+    alt: Mountain Plains
+  - img: http://imgur.com/PlvFMHK
+    alt: Winter Yard
+  - img: http://imgur.com/AUAkjWN
+    alt: Chibi Person
 ---
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+       {% for item in page.my_array %}
+        <li data-target="#myCarousel" data-slide-to="{{ forloop.index }}" {% if forloop.index==1 %} class="active" {% else %} class="" {% endif %}></li>
+      {% endfor %} 
       </ol>
       <div class="carousel-inner" role="listbox">
+        {% for carousel in page.carousels %}
         <div class="item">
-          <img class="img-responsive center-block" style="margin: 0 auto;" src="images/chibi.png" alt="First slide">
+          <img class="img-responsive center-block" style="margin: 0 auto;" src="{{ carousel.img }}" alt="{{ carousel.alt }}">
         </div>
-        <div class="item">
-          <img class="img-responsive center-block" src="images/flower.png" alt="Second slide">
-        </div>
-        <div class="item active">
-          <img class="img-responsive center-block" src="images/mountain.png" alt="Third slide">
-        </div>
+        {% endfor %}
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
