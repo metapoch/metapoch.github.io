@@ -13,7 +13,7 @@ carousel:
       <!-- Indicators -->
       <ol class="carousel-indicators">
        {% for item in page.carousel %}
-        <li data-target="#myCarousel" data-slide-to="{{ forloop.index }}" {% if forloop.index==1 %} class="active" {% else %} class="" {% endif %}></li>
+        <li data-target="#myCarousel" data-slide-to="{{ forloop.index | minus: 1 }}" {% if forloop.index==1 %} class="active" {% else %} class="" {% endif %}></li>
       {% endfor %} 
       </ol>
       <div class="carousel-inner" role="listbox">
