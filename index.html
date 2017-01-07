@@ -12,16 +12,18 @@ carousel:
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+      {% for item in page.carousel %}
+        {% assign loopindex = forloop.index | minus: 1 %}
+        <li data-target="#myCarousel" data-slide-to="{{ loopindex }}" {% if loopindex == 0 %} class="active" {% else %} class="" {% endif %}></li>
+      {% endfor %} 
       </ol>
       <div class="carousel-inner" role="listbox">
         {% for item in page.carousel %}
-        <div class="item">
+        {% assign loopindex = forloop.index | minus: 1 %}
+        <div {% if loopindex == 0 %} class="item active" {% else %} class="item" {% endif %}>
           <img class="img-responsive center-block" style="margin: 0 auto;" src="{{ item.img }}" alt="{{ item.alt }}">
         </div>
-        {% endfor %}        
+        {% endfor %}
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
