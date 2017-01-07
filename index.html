@@ -1,6 +1,13 @@
 ---
 layout: default
 title: Metapoch
+carousel:
+  - img: http://imgur.com/9HXnahO.png
+    alt: Mountain Plains
+  - img: http://imgur.com/PlvFMHK.png
+    alt: Winter Yard
+  - img: http://imgur.com/AUAkjWN.png
+    alt: Chibi Person
 ---
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -10,15 +17,11 @@ title: Metapoch
         <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
+        {% for item in page.carousel %}
         <div class="item">
-          <img class="img-responsive center-block" style="margin: 0 auto;" src="http://imgur.com/9HXnahO.png" alt="First slide">
+          <img class="img-responsive center-block" style="margin: 0 auto;" src="{{ item.img }}" alt="{{ item.alt }}">
         </div>
-        <div class="item">
-          <img class="img-responsive center-block" src="images/flower.png" alt="Second slide">
-        </div>
-        <div class="item active">
-          <img class="img-responsive center-block" src="images/mountain.png" alt="Third slide">
-        </div>
+        {% endfor %}
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
